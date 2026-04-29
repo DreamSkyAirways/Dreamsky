@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { packages } from "@/app/data/packages";
 import { notFound } from "next/navigation";
-import PackageDetails from "./packagedetails";
+import PackageDetails from "./packageDetails";
 
 
 type Props = {

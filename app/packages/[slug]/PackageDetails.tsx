@@ -35,7 +35,7 @@ export default function PackageDetails({ pkg }: Props) {
         >
           <h2 className="text-2xl font-bold text-gray-800 mb-3">Package Not Available</h2>
           <p className="text-gray-600 mb-6">Sorry, we couldn't load this tour package right now.</p>
-          <a
+           <a
             href="/packages"
             className="inline-block bg-[#0B3E44] text-white px-6 py-3 rounded-xl hover:bg-[#082a2f] transition"
           >

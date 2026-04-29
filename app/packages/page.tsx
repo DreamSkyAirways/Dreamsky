@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PackageSetup from "./packageSetup";
 
+
 export const metadata: Metadata = {
   title: "Affordable Tour Packages | Dream Sky Airways Best Deals",
   description:

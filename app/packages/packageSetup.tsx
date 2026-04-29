@@ -12,7 +12,7 @@ interface Props {
   slider?: boolean;
 }
 
-const packagesetup = ({ showHero = true, slider = false }: Props) => {
+const PackageSetup = ({ showHero = true, slider = false }: Props) => {
   const [slideIndex, setSlideIndex] = useState(0);
 
   useEffect(() => {
@@ -104,4 +104,4 @@ function PackageCard({ pkg }: any) {
   );
 }
 
-export default packagesetup;
+export default  PackageSetup ;
