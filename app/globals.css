@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #0D6269;
+
+  
+  color-scheme: light;
+}
+html, body {
+  overflow-x: hidden;
+}
+
+
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+  }
+}
+
+
+
+html,
+body {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* form container */
+.booking-card {
+  @apply bg-[#ffffff]
+  border border-gray-200
+  rounded-2xl shadow-2xl;
+}
+
+/* input wrapper */
+.input-glass {
+  @apply bg-white border border-gray-300
+  rounded-xl px-4 py-3
+  flex flex-col gap-1;
+}
+
+/* input label */
+.input-glass span {
+  @apply text-xs text-gray-600 font-medium;
+}
+
+/* actual input */
+.glass-input {
+  @apply bg-white outline-none
+  text-black text-sm font-semibold;
+}
+
+/* date picker icon */
+.glass-input::-webkit-calendar-picker-indicator {
+  filter: invert(0);
+}
+
+/* radio */
+.radio-label {
+  @apply flex items-center gap-2 text-gray-700 cursor-pointer;
+}
+
+/* ================= BUTTONS ================= */
+
+.search-btn {
+  @apply text-white font-semibold
+  rounded-xl transition
+  flex items-center justify-center;
+  background-color: var(--primary);
+}
+
+.search-btn:hover {
+  background-color: #094c51;
+}
+
+
+
+.counter-btn {
+  @apply w-9 h-9 rounded-full
+  flex items-center justify-center
+  text-white font-bold
+  transition;
+  background-color: var(--primary);
+}
+
+.counter-btn:hover {
+  background-color: #094c51;
+}
+
+
+
+input,
+textarea,
+select {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  caret-color: #000000 !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #6b7280 !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-text-fill-color: #000000 !important;
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}

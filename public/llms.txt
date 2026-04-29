@@ -1,0 +1,4 @@
+# AI Crawlers Access
+User-agent: *
+Allow: /
+sitemap:https://www.dreamskyairways.com/sitemap.xml
