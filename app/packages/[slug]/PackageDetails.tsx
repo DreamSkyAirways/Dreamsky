@@ -3,7 +3,10 @@
 import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
+import Image from "next/image";
 import PackageSetup from "../packageSetup";
+
 
 interface Package {
   id?: number;
@@ -35,12 +38,12 @@ export default function PackageDetails({ pkg }: Props) {
         >
           <h2 className="text-2xl font-bold text-gray-800 mb-3">Package Not Available</h2>
           <p className="text-gray-600 mb-6">Sorry, we couldn't load this tour package right now.</p>
-           <a
+           <Link
             href="/packages"
             className="inline-block bg-[#0B3E44] text-white px-6 py-3 rounded-xl hover:bg-[#082a2f] transition"
           >
             ← Back to All Packages
-          </a>
+          </Link>
         </motion.div>
       </div>
     );
@@ -89,10 +92,12 @@ export default function PackageDetails({ pkg }: Props) {
               transition={{ duration: 0.6 }}
               className="overflow-hidden rounded-2xl shadow-2xl shadow-[#0B3E44]/10 bg-gray-100"
             >
-              <img
+              <Image
                 src={mainImage}
                 alt={pkg.title}
                 className="w-full aspect-[4/3] lg:aspect-[5/4] object-cover transition-transform duration-700 hover:scale-105"
+                width={800}
+                height={600}
               />
             </motion.div>
 
@@ -107,7 +112,7 @@ export default function PackageDetails({ pkg }: Props) {
                       mainImage === img ? "border-[#0B3E44]" : "border-transparent"
                     }`}
                   >
-                    <img
+                    <Image
                       src={img}
                       alt={`${pkg.title}-${i + 1}`}
                       className="w-28 h-20 sm:w-32 sm:h-24 object-cover"
@@ -126,7 +131,7 @@ export default function PackageDetails({ pkg }: Props) {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-[#0B3E44]/5 to-[#0B3E44]/10 p-6 rounded-2xl border border-[#0B3E44]/10 shadow-sm">
+            <div className=" from-[#0B3E44]/5 to-[#0B3E44]/10 p-6 rounded-2xl border border-[#0B3E44]/10 shadow-sm">
               <span className="text-4xl sm:text-5xl font-extrabold text-[#0B3E44]">
                 {pkg.price}
               </span>
