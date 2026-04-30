@@ -3,7 +3,7 @@ export const blogs = [
   {
     title: "Why India is the Best Travel Destination in the World",
     slug: "why-india-best-travel-destination",
-    image: "/Blog/Besttimes.webp",
+    image: "/Blog/Besttimes.png",
     excerpt: "India offers unmatched diversity with culture, nature, history, spirituality, and adventure in one country. Discover why millions choose India every year.",
     content: `</h2>
     </br>
@@ -142,7 +142,7 @@ India is more than a destination—it is an experience that stays with you forev
   {
     title: "Domestic vs International Travel: Which is Better?",
     slug: "domestic-vs-international-travel",
-    image: "/Blog/Domestics.webp",
+    image: "/Blog/Domestics.png",
     excerpt: "Compare domestic and international travel to decide what suits your budget, time, and travel goals. Pros, cons, and tips inside.",
     content: `</h2>
   <br/>
@@ -286,7 +286,7 @@ There is no one-size-fits-all answer. Domestic travel is perfect for convenience
   {
     title: "How to Plan a Perfect Family Vacation",
     slug: "perfect-family-vacation-planning",
-    image:"/Blog/family11.webp",
+    image:"/Blog/family11.png",
     excerpt: "Step-by-step guide to planning a stress-free, memorable family vacation in India with kids.",
     content: `</h2>
 
@@ -449,7 +449,7 @@ A perfect family vacation is not about luxury alone—it’s about shared experi
   {
     title: "Top Benefits of Booking Through a Travel Agency",
     slug: "benefits-of-travel-agency",
-    image: "/Blog/Travelagency.webp",
+    image: "/Blog/Travelagency.png",
     excerpt: "Why professional travel agencies like Dream Sky Airways save time, money, and stress compared to online booking.",
     content: `</h2>
 

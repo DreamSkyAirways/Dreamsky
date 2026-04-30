@@ -167,7 +167,7 @@ export default function PackageDetails({ pkg }: Props) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="space-y-4 min-h-[160px]"
+                className="space-y-4 min-h-40"
               >
                 {activeItems.map((item, idx) => (
                   <div

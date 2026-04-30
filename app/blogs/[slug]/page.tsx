@@ -4,120 +4,117 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import TravelBlogs from "@/components/blogs/TravelBlogs";
 import type { Metadata } from "next";
-import { desc } from "framer-motion/client";
 
 type MetaProps = {
   params: Promise<{ slug: string }>;
 };
 
-export async function generateMetadata(
-  { params }: MetaProps
-): Promise<Metadata> {
-
+export async function generateMetadata({ params }: MetaProps): Promise<Metadata> {
   const { slug } = await params;
-    const blog =blogs.find((s)=> s.slug === slug)
-    
-    if(!blog) {
-      return {
-        title:"Blog Not found | Dream Sky Airways",
-        description:"Blog Not found | Dream Sky Airways",
-      }
-    };
-    return {
-      title:`${blog.title}`,
-      description: `${blog.title} – Read this travel guide by Dream Sky Airways. Get expert tips, best deals, and complete tour planning support.`,
-    alternates:{
-      canonical:'https://www.dreamskyairways.com/blogs/${blog.slug}',
-    }
-    };
+  const blog = blogs.find((s) => s.slug === slug);
 
+  if (!blog) {
+    return {
+      title: "Blog Not found | Dream Sky Airways",
+      description: "Blog Not found | Dream Sky Airways",
+    };
+  }
+
+  return {
+    title: `${blog.title}`,
+    description: `${blog.title} – Read this travel guide by Dream Sky Airways. Get expert tips, best deals, and complete tour planning support.`,
+    alternates: {
+      canonical: `https://www.dreamskyairways.com/blogs/${blog.slug}`,
+    },
   };
+}
 
 type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
-export default async function BlogDetailsPage ({ params }: PageProps) {
+export default async function BlogDetailsPage({ params }: PageProps) {
   const { slug } = await params;
 
   const blog = blogs.find((b) => b.slug === slug);
 
   if (!blog) {
     notFound();
-    
   }
- const combinedSchema = [
-  {
-    "@context":"https://schema.org",
-    "@type":"BlogPosting",
-    name:blog.title,
-    description:`${blog.title} – Travel guide by Dream Sky Airways`,
-    url:`https://www.dreamskyairways.com/blogs/${blog.slug}`,
-    Publisher :{
-     "@type":"Organization",
-     name:"Dream Sky Airways",
-     url:"https://www.dreamskyairways.com",
-     logo:{
-      "@type":"ImageObject",
-      url:"https://www.dreamskyairways.com/logo.png",
-         },
-    },  
-  },
-   {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement : [
-      {
-        "@type":"ListItem",
-         position:1,
-         name:"home",
-         item:"https://www.dreamskyairways.com",
+
+  const combinedSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      name: blog.title,
+      description: `${blog.title} – Travel guide by Dream Sky Airways`,
+      url: `https://www.dreamskyairways.com/blogs/${blog.slug}`,
+      Publisher: {
+        "@type": "Organization",
+        name: "Dream Sky Airways",
+        url: "https://www.dreamskyairways.com",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://www.dreamskyairways.com/logo.png",
+        },
       },
-      {
-        "type":"ListItem",
-        position:2,
-        name:"blogs",
-        item:"https://www.dreamskyairways.com/blogs",
-      },
-      {
-        "@type":"ListItem",
-        position:3,
-        name:"blog.title",
-        item:`https://www.dreamskyairways.com/blogs/${blog.slug}`
-      },
-    ],
-  },
-];
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "home",
+          item: "https://www.dreamskyairways.com",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "blogs",
+          item: "https://www.dreamskyairways.com/blogs",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: blog.title,
+          item: `https://www.dreamskyairways.com/blogs/${blog.slug}`,
+        },
+      ],
+    },
+  ];
 
   return (
-   <>
-    <script 
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html:JSON.stringify(combinedSchema)
-    }}
-    />
-  
-      <div className="relative w-full h-[300px] md:h-[500px] overflow-hidden">
-        {/* <Image
-          src={blog.image}
-          alt={blog.title}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        /> */}
-      </div>  
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(combinedSchema) }}
+      />
 
-      {/* 🔥 CONTENT SECTION */}
+      {/* ── Hero image — padded left/right, margin from top ───────────── */}
+     <div className="w-full mt-6 sm:mt-8 md:mt-20 px-4 sm:px-6 md:px-10 lg:px-16">
+  <div className="relative w-full h-300px sm:h-100 md:h-125 bg-gray-100 flex items-center justify-center rounded-2xl overflow-hidden">
+    <Image
+      src={blog.image}
+      alt={blog.title}
+      fill
+      priority
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
+      className="object-contain"
+    />
+  </div>
+</div>
+
+      {/* ── Content section ──────────────────────────────────────────── */}
       <section className="max-w-5xl mx-auto py-16 px-4">
-        
-        {/* BLOG TITLE */}
+
+        {/* Blog title */}
         <h1 className="text-4xl md:text-5xl font-semibold mb-8 leading-tight">
-         {blog.title} Dream Sky Airways
+          {blog.title} Dream Sky Airways
         </h1>
 
-        {/* BLOG CONTENT */}
+        {/* Blog content */}
         <article
           className="
             prose prose-lg max-w-none
@@ -153,15 +150,16 @@ export default async function BlogDetailsPage ({ params }: PageProps) {
           "
           dangerouslySetInnerHTML={{ __html: blog.content }}
         />
-      <TravelBlogs showViewAll={false}/>
 
-        {/* 🔥 CTA BOX */}
-        <div className="mt-20 p-8 rounded-md bg-[var(--card)] shadow-md text-center">
-          <h2 className="text-2xl font-semibold mb-4 text-[var(--primary)]">
+        <TravelBlogs showViewAll={false} />
+
+        {/* CTA box */}
+        <div className="mt-20 p-8 rounded-md bg-(--card) shadow-md text-center">
+          <h2 className="text-2xl font-semibold mb-4 text-(--primary)">
             Travel Enquiry – Dream Sky Airways
           </h2>
 
-          <p className="text-[var(--muted)] mb-8">
+          <p className="text-(--muted) mb-8">
             For tour packages, flight bookings, and customized travel plans,
             connect with our travel experts today.
           </p>
@@ -170,11 +168,11 @@ export default async function BlogDetailsPage ({ params }: PageProps) {
             📍 <strong>Address:</strong> A-Block, Noida Sector-63, U.P <br /><br />
 
             📞 <strong>Helpline:</strong> <br />
-            <a href="tel:+911204580951" className="text-[var(--primary)] hover:underline">
+            <a href="tel:+911204580951" className="text-(--primary) hover:underline">
               +91-1204580951
             </a>
             <br />
-            <a href="tel:+918750610304" className="text-[var(--primary)] hover:underline">
+            <a href="tel:+918750610304" className="text-(--primary) hover:underline">
               +91-8750610304
             </a>
             <br /><br />
@@ -182,13 +180,12 @@ export default async function BlogDetailsPage ({ params }: PageProps) {
             📧 <strong>Email:</strong>{" "}
             <a
               href="mailto:tripenquiry@dreamskyairways.com"
-              className="text-[var(--primary)] hover:underline"
+              className="text-(--primary) hover:underline"
             >
               tripenquiry@dreamskyairways.com
             </a>
           </div>
 
-          {/* BOOK BUTTON */}
           <Link
             href="/trip-booking"
             className="
@@ -206,8 +203,8 @@ export default async function BlogDetailsPage ({ params }: PageProps) {
             Book Your Trip
           </Link>
         </div>
-       
+
       </section>
-      </>
+    </>
   );
-};
+}

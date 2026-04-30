@@ -58,7 +58,7 @@ export default function Hero({
 
           {/* Line 3 */}
           <motion.span
-            className="block text-5xl md:text-6xl mt-2 bg-gradient-to-r from-[#8bc34a] via-[#4caf50] to-[#0D6265] bg-clip-text text-transparent"
+            className="block text-5xl md:text-6xl mt-2 bg-linear-to-r from-[#8bc34a] via-[#4caf50] to-[#0D6265] bg-clip-text text-transparent"
 
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
