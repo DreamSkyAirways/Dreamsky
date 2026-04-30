@@ -19,29 +19,30 @@ export default function BookingTabs() {
   const [active, setActive] = useState("flight");
 
   return (
-    <div className="w-full max-w-5xl mx-auto mt-8 sm:mt-10 px-4 sm:px-0 mb-10 bg-[#0D6269]/30 ">
-      {/* ===== TOP TABS ===== */}
-      <div className="flex flex-wrap justify-center sm:justify-start gap-3 sm:gap-6 md:gap-8 px-4 sm:px-6 py-3 sm:py-4 bg-[#0b1220]/40 backdrop-blur-xl rounded-t-2xl border border-white/10 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-600/50 mt-20 ">
+    <div className="w-full max-w-5xl mx-auto mt-0 px-2 sm:px-4 mb-2">
+      <div className="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-5 md:gap-8 px-3 sm:px-6 py-3 sm:py-4 bg-[#0b1220]/75 backdrop-blur-xl rounded-t-2xl border border-white/10 overflow-x-auto">
         {tabs.map((tab) => {
           const isActive = active === tab.id;
           return (
             <button
               key={tab.id}
               onClick={() => setActive(tab.id)}
-              className={`relative flex items-center gap-2 sm:gap-3 px-4 sm:px-5 py-2.5 sm:py-3 rounded-lg transition-all duration-300 whitespace-nowrap
-                ${isActive 
-                  ? "bg-[#0D6269]/20 text-[#0D6269] shadow-sm" 
-                  : "text-white hover:text-gray-200 hover:bg-white/10"}`}
+              className={`relative flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-2 sm:py-3 rounded-lg transition-all duration-300 whitespace-nowrap
+                ${
+                  isActive
+                    ? "bg-[#0D6269]/20 text-white shadow-sm"
+                    : "text-white hover:text-gray-200 hover:bg-white/10"
+                }`}
             >
               <Image
                 src={tab.icon}
                 alt={tab.label}
-                width={30}
-                height={30}
+                width={24}
+                height={24}
                 className={`transition-all ${isActive ? "brightness-80 invert" : "opacity-70"}`}
               />
 
-              <span className={`font-medium text-sm sm:text-base ${isActive ? "text-black" : ""}`}>
+              <span className="font-medium text-xs sm:text-sm md:text-base">
                 {tab.label}
               </span>
 
@@ -53,8 +54,7 @@ export default function BookingTabs() {
         })}
       </div>
 
-      
-      <div className="bg-[#0b1220]/35 backdrop-blur-2xl border border-white/10 rounded-b-2xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-10 shadow-2xl">
+      <div className="bg-[#0b1220]/65 backdrop-blur-2xl border border-white/10 rounded-b-2xl px-3 sm:px-6 lg:px-8 py-4 sm:py-7 md:py-8 shadow-2xl">
         <div className="w-full">
           {active === "flight" && <FlightForm />}
           {active === "cab" && <CabForm />}
