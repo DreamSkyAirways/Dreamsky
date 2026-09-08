@@ -8,25 +8,25 @@ import {IoBagCheckOutline} from "react-icons/io5";
 import CareerForm from "../CareerForm";
 
 export const jobs = [
-  {
-    id: 1,
-    title: "Ticket Confirmation Executive",
-    slug: "ticket-confirmation-executive",
-    department: "Operations",
-    location: "Noida, India",
-    type: "Full Time",
-    experience: "0-2 Years",
-    image: "/images/careers/ticket-confirmation.png",
-    secondaryImage: "/images/careers/ticket-confirmation.png",
-    description:
-      "Handle ticket confirmations, coordinate with airlines, and ensure a seamless booking experience for customers.",
-    responsibilities: [
-      "Confirm domestic and international flight bookings.",
-      "Coordinate with airline partners.",
-      "Handle customer ticket-related queries.",
-      "Maintain booking records and reports.",
-    ],
-  },
+  // {
+  //   id: 1,
+  //   title: "Ticket Confirmation Executive",
+  //   slug: "ticket-confirmation-executive",
+  //   department: "Operations",
+  //   location: "Noida, India",
+  //   type: "Full Time",
+  //   experience: "0-2 Years",
+  //   image: "/images/careers/ticket-confirmation.png",
+  //   secondaryImage: "/images/careers/ticket-confirmation.png",
+  //   description:
+  //     "Handle ticket confirmations, coordinate with airlines, and ensure a seamless booking experience for customers.",
+  //   responsibilities: [
+  //     "Confirm domestic and international flight bookings.",
+  //     "Coordinate with airline partners.",
+  //     "Handle customer ticket-related queries.",
+  //     "Maintain booking records and reports.",
+  //   ],
+  // },
 
   {
     id: 2,
@@ -108,25 +108,25 @@ export const jobs = [
     ],
   },
 
-  {
-    id: 6,
-    title: "Sales Executive",
-    slug: "sales-executive",
-    department: "Sales & Marketing",
-    location: "Delhi NCR",
-    type: "Full Time",
-    experience: "1-4 Years",
-    image: "/images/careers/sales-executive.png",
-    secondaryImage: "/images/careers/sales-executive.png",
-    description:
-      "Drive travel package sales, build customer relationships, and achieve monthly business targets.",
-    responsibilities: [
-      "Generate new customer leads.",
-      "Promote holiday and flight packages.",
-      "Achieve monthly sales targets.",
-      "Maintain long-term client relationships.",
-    ],
-  },
+  // {
+  //   id: 6,
+  //   title: "Sales Executive",
+  //   slug: "sales-executive",
+  //   department: "Sales & Marketing",
+  //   location: "Delhi NCR",
+  //   type: "Full Time",
+  //   experience: "1-4 Years",
+  //   image: "/images/careers/sales-executive.png",
+  //   secondaryImage: "/images/careers/sales-executive.png",
+  //   description:
+  //     "Drive travel package sales, build customer relationships, and achieve monthly business targets.",
+  //   responsibilities: [
+  //     "Generate new customer leads.",
+  //     "Promote holiday and flight packages.",
+  //     "Achieve monthly sales targets.",
+  //     "Maintain long-term client relationships.",
+  //   ],
+  // },
   {
     id: 7,
     title: "Frontend Developer",
@@ -207,25 +207,25 @@ export const jobs = [
     ],
   },
 
-  {
-    id: 11,
-    title: "Data Analyst",
-    slug: "data-analyst",
-    department: "Business Intelligence",
-    location: "Noida, India",
-    type: "Full Time",
-    experience: "1-4 Years",
-    image: "/images/careers/data-analyst.png",
-    secondaryImage: "/images/careers/data-analyst.png",
-    description:
-      "Analyze customer, booking, and operational data to drive strategic business decisions.",
-    responsibilities: [
-      "Create reports and dashboards using BI tools.",
-      "Analyze sales and customer trends.",
-      "Work with teams to improve business processes.",
-      "Generate actionable insights from large datasets.",
-    ],
-  },
+  // {
+  //   id: 11,
+  //   title: "Data Analyst",
+  //   slug: "data-analyst",
+  //   department: "Business Intelligence",
+  //   location: "Noida, India",
+  //   type: "Full Time",
+  //   experience: "1-4 Years",
+  //   image: "/images/careers/data-analyst.png",
+  //   secondaryImage: "/images/careers/data-analyst.png",
+  //   description:
+  //     "Analyze customer, booking, and operational data to drive strategic business decisions.",
+  //   responsibilities: [
+  //     "Create reports and dashboards using BI tools.",
+  //     "Analyze sales and customer trends.",
+  //     "Work with teams to improve business processes.",
+  //     "Generate actionable insights from large datasets.",
+  //   ],
+  // },
 
   {
     id: 12,
